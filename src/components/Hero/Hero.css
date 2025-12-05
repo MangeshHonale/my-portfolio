@@ -1,0 +1,20 @@
+
+.hero{
+  background: linear-gradient(
+    140deg,
+    #f9f9fb 0%,
+    #f9f9fb 55%,
+    #f3eeff 100%
+  );
+  margin-bottom: 32px;
+  border-bottom: 1px solid rgba(229, 229, 232, 0.7);
+}
+/* Banner placeholder strip */
+.hero-banner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  height: 270px;
+  background: radial-gradient(circle at 0% 0%, #fdfbff 0, #f3efff 40%, #f9f9fb 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
+}

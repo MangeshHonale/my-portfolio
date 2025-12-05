@@ -1,0 +1,56 @@
+.tabset {
+  background: var(--color-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(229, 229, 232, 0.9);
+  padding: 18px;
+  font-size: 0.92rem;
+  max-width: var(--max-width);
+  margin: 20px auto 36px; /* center and add spacing from surrounding sections */
+}
+
+/* Header row that holds the tab buttons */
+.tabset-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 10px;
+  margin-bottom: 8px;
+}
+
+/* Body area that displays the active tab panel */
+.tabset-body {
+  padding-top: 14px;
+}
+
+.tab-panel {
+  padding: 12px 6px 6px;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+/* Make header scrollable on small screens */
+.tabset-header {
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+/* make tabs align visually with other controls */
+.tab {
+  padding: 8px 12px;
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.tab.is-active {
+  color: var(--color-text-main);
+}
+
+@media (max-width: 900px) {
+  .tabset {
+    margin-left: 12px;
+    margin-right: 12px;
+    padding: 12px;
+  }
+}

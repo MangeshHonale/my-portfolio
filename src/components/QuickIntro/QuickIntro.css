@@ -1,0 +1,40 @@
+.quick-stats.hero-quick-stats {
+  background: var(--color-card);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px 18px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(229, 229, 232, 0.9);
+}
+
+.quick-stats-title {
+  margin: 0 0 10px;
+  font-family: "Sora", system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.stat-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+  padding: 6px 0;
+  border-bottom: 1px dashed rgba(229, 229, 232, 0.8);
+  align-items: flex-start;
+}
+
+.stat-row:last-of-type {
+  border-bottom: none;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: 2px;
+}
+
+.stat-value {
+  font-size: 0.9rem;
+  color: var(--color-text-main);
+}

@@ -1,68 +1,113 @@
+/* ========== THEME TOKENS ========== */
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --color-accent: #6A4CFF;
+  --color-accent-hover: #593DDB;
+  --color-accent-soft: #EEE9FF;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --color-text-main: #1E1E1E;
+  --color-text-muted: #6F6F6F;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --color-bg: #F9F9FB;
+  --color-card: #FFFFFF;
+  --color-border: #E5E5E8;
+
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --radius-pill: 999px;
+
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.06);
+
+  --max-width: 1120px;
+}
+
+/* ========== GLOBAL ========== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body.theme-light {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text-main);
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  color: inherit;
+  text-decoration: none;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.page {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+/* ========== TOP NAVIGATION ========== */
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+/* ========== HERO SECTION ========== */
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* ========== QUICK STATS (IN HERO) ========== */
+
+
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1fr);
+    padding-bottom: 24px;
   }
-  a:hover {
-    color: #747bff;
+
+  .hero-main {
+    gap: 16px;
   }
-  button {
-    background-color: #f9f9f9;
+
+  .hero-quick-stats {
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-inner {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .nav-links {
+    display: none; /* keep it simple for now; later we can add a burger menu */
+  }
+
+  .hero-main {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .profile-pic {
+    margin-top: -32px;
+    width: 96px;
+    height: 96px;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-intro {
+    font-size: 0.9rem;
+  }
+
+  .quick-stats.hero-quick-stats {
+    padding: 14px 14px 16px;
   }
 }

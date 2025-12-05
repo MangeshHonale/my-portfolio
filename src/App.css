@@ -1,8 +1,19 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0 2rem 2rem 2rem;
+  text-align: left;
+}
+
+.app{
+  background: linear-gradient(
+    140deg,
+    #f9f9fb 0%,
+    #f9f9fb 55%,
+    #f3eeff 100%
+  );
+  margin-bottom: 32px;
+  border-bottom: 1px solid rgba(229, 229, 232, 0.7);
 }
 
 .logo {
