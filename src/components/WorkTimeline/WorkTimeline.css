@@ -1,0 +1,160 @@
+/* Section wrapper */
+.timeline-section {
+  max-width: 900px;
+  padding: 0 16px 40px;
+}
+
+/* Timeline base */
+.timeline {
+  position: relative;
+  padding-left: 24px;
+}
+
+
+/* Individual item */
+.timeline-item {
+  position: relative;
+  margin-bottom: 24px;
+  padding-left: 24px;
+}
+
+/* Marker on the line */
+.timeline-marker {
+  position: absolute;
+  left: -23px;
+  top: 12px;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  border: 3px solid #4f46e5;
+  background: #f4f5fb;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12);
+}
+
+/* Card content */
+.timeline-content {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 0px 18px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  border: 1px solid #e5e7eb;
+}
+
+/* Header layout */
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+/* Vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, #c3d0ff, #9ca3af);
+}
+
+.role {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.company {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+.meta {
+  text-align: right;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: #eef2ff;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border-left: 4px solid #4f46e5;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.duration {
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.location {
+  color: #6b7280;
+}
+
+/* Body / responsibilities */
+.timeline-body {
+  margin-top: -10px;
+}
+
+.section-heading {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #9ca3af;
+  margin-bottom: 6px;
+}
+
+.responsibilities {
+  padding-left: 18px;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.responsibilities li + li {
+  margin-top: 4px;
+}
+
+/* Hover effect */
+.timeline-item:hover .timeline-content {
+  border-color: #c3d0ff;
+  box-shadow: 0 10px 24px rgba(79, 70, 229, 0.15);
+  transform: translateY(-1px);
+  transition: all 0.18s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .timeline-section {
+    margin-top: 24px;
+  }
+
+  .timeline-title {
+    font-size: 1.4rem;
+  }
+
+  .timeline {
+    padding-left: 20px;
+  }
+
+  .timeline::before {
+    left: 8px;
+  }
+
+  .timeline-marker {
+    left: -2px;
+  }
+
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .meta {
+    text-align: left;
+  }
+}

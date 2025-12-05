@@ -1,0 +1,57 @@
+/* Grid Container */
+.skills-container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Card */
+.skill-card {
+  background: #ffffff;
+  padding: 0px 24px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  transition: 0.25s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: #c7d2fe;
+  box-shadow: 0 12px 30px rgba(79, 70, 229, 0.15);
+}
+
+/* Title */
+.skill-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #1e293b;
+}
+
+/* Skills List - Two Column Layout */
+.skill-list {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 1fr));
+  gap: 10px 12px;
+}
+
+.skill-list li {
+  background: #eef2ff;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border-left: 4px solid #4f46e5;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+  .skill-list {
+    grid-template-columns: 1fr; /* Stacks skills on very small screens */
+  }
+}
