@@ -16,5 +16,11 @@ export const PROJECTS = [
         title: "Project Three",
         description: "Description for project three.", 
         techStack: "Python, Django, PostgreSQL"
+    },
+
+    {
+        title: "Project four",
+        description: "Description for project four.", 
+        techStack: "Python, Django, PostgreSQL"
     }
 ];

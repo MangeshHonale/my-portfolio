@@ -15,19 +15,32 @@
 /* Slides Container */
 .slides {
   display: flex;
-  width: 100%;
+  width: calc(100% * var(--slides));
   transition: transform 0.6s ease;
+  transform: translateX(calc(-1 * var(--current, 0) * 100% / var(--slides)));
 }
 
 /* Individual Slide */
 .slide {
-  width: 100%;
+  width: calc(100% / var(--slides));
   background: #fff;
-  padding: 0 24px 24px 24px;
+  padding: 0; 
+  margin: 0.1px;
   border-radius: 14px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   border: 1px solid #e5e7eb;
   box-sizing: border-box;
+  flex: 0 0 calc(100% / var(--slides));
+  display: flex;
+  overflow: hidden; /* prevent inner content from escaping rounded corners */
+  min-width: calc(100% / var(--slides));
+}
+
+.slide-inner {
+  padding: 0 24px 24px 24px;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0; /* allow flex children to shrink properly */
 }
 
 .slide .project-title {
@@ -52,16 +65,8 @@
   border-left: 5px solid #4f46e5;
 }
 
-/* Slide Control via Radio Buttons */
-#slide1:checked ~ .slides {
-  transform: translateX(0);
-}
-#slide2:checked ~ .slides {
-  transform: translateX(-33.333%);
-}
-#slide3:checked ~ .slides {
-  transform: translateX(-66.666%);
-}
+/* Slide Control via Radio Buttons (kept hidden) */
+/* The visual movement is handled via the --current CSS variable set from React. */
 
 /* Navigation Dots */
 .dots {
@@ -77,13 +82,11 @@
   background: #cbd5e1;
   margin: 0 6px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.25s transform, 0.25s background;
 }
 
-/* Active Dot Styles */
-#slide1:checked ~ .dots label:nth-child(1),
-#slide2:checked ~ .dots label:nth-child(2),
-#slide3:checked ~ .dots label:nth-child(3) {
+/* Active Dot Styles - controlled by React via class */
+.dots label.is-active {
   background: #4f46e5;
   transform: scale(1.2);
 }
