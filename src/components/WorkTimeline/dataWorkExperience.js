@@ -3,7 +3,7 @@ export const WORK_EXPERIENCE = [
         "title": "Solution Architect",
         "company": "Western Union",
         "location": "Pune, India",
-        "duration": "Mar 2023 – Present",
+        "duration": "Mar 2023 - Present",
         "responsibilities": [
             "Architect customized scalable solutions to transform customer support functions",
             "Involved in requirements gathering, analysis, technical solution, design, development and testing",
@@ -20,7 +20,7 @@ export const WORK_EXPERIENCE = [
         "title": "Application Developer",
         "company": "IBM",
         "location": "Pune, India",
-        "duration": "Jan 2020 – Mar 2023",
+        "duration": "Jan 2020 - Mar 2023",
         "responsibilities": [
             "Worked on-site in the U.S. for one year supporting business-critical modules",
             "Responsible for analysis, solution design, development, testing and user training",
@@ -34,7 +34,7 @@ export const WORK_EXPERIENCE = [
         "title": "Senior Software Development Engineer",
         "company": "Emtec Technologies",
         "location": "Pune, India",
-        "duration": "Jun 2017 – Jan 2020",
+        "duration": "Jun 2017 - Jan 2020",
         "responsibilities": [
             "Worked on experience cloud implementations through development, testing and deployments",
             "Devised metrics driven deduplication process to improve data quality and sanity",
@@ -47,7 +47,7 @@ export const WORK_EXPERIENCE = [
         "title": "Software Engineer",
         "company": "LogiQuad Solutions",
         "location": "Pune, India",
-        "duration": "Jun 2014 – Jun 2017",
+        "duration": "Jun 2014 - Jun 2017",
         "responsibilities": [
             "Involved in analysis, development, testing, packaging of an AppExchange application",
             "Integrated opportunity sales process with DocuSign workflows using API improving closure rate by 40%",
