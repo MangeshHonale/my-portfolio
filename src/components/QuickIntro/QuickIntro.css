@@ -37,4 +37,5 @@
 .stat-value {
   font-size: 0.9rem;
   color: var(--color-text-main);
+  display: flex;
 }

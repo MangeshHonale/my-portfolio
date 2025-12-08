@@ -3,17 +3,23 @@
 .hero-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 20px 28px;
+  padding: 0 0 28px 20px;
   display: grid;
   grid-template-columns: minmax(0, 3fr) minmax(260px, 2fr);
   gap: 32px;
   align-items: flex-start;
 }
 
+.box:nth-child(3) {
+  grid-column: 1 / -1; /* This makes div3 span full width of row 2 */
+  justify-self: start; /* optional: align left */
+}
+
 .hero-main {
-  display: flex;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   align-items: flex-start;
+  gap: 0;  
 }
 
 /* Profile picture placeholder */
@@ -47,6 +53,9 @@
   padding-top: 8px;
 }
 
+.title-section{
+  grid-column: 2 / -1;
+}
 .hero-title {
   margin: 0;
   font-family: "Sora", system-ui, sans-serif;

@@ -24,7 +24,7 @@
 .modal-content {
   background: #ffffff;
   width: 90%;
-  height: 90vh; /* 90% of viewport height */
+  height: 98vh; 
   max-width: 950px;
   border-radius: 14px;
   overflow: hidden;
