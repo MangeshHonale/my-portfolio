@@ -1,5 +1,4 @@
 import '../WorkTimeline/WorkTimeline.css';
-import { FaLocationDot  } from "react-icons/fa6";
 
 export default function WorkExperience(props) {
     return (
@@ -13,7 +12,7 @@ export default function WorkExperience(props) {
                     </div>
                     <div className="meta">
                         <span className="duration">{props.duration}</span>
-                        <span className="location"><FaLocationDot /> {props.location}</span>
+                        <span className="location">{props.location}</span>
                     </div>
                 </header>
 
