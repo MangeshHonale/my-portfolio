@@ -11,8 +11,8 @@ export default function TabSet({ref}) {
     const tabs = [
         { label: 'Work Experience', key:"experience", content: <WorkTimeline/> },
         { label: 'Projects', key:"projects", content: <Slider/> },
-        { label: 'Skills', key:"skills", content: <SkillSet/> },
         { label: 'Credentials', key:"credentials", content: <Credentials/> },
+        { label: 'Skills', key:"skills", content: <SkillSet/> }
     ];
 
     const [activeIndex, setActiveIndex] = useState(0);
