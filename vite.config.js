@@ -6,5 +6,5 @@
     plugins: [
       react(),
     ],
-    base: "/my-portfolio/"
+    base: "/"
   })
