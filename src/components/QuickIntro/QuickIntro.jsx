@@ -1,10 +1,12 @@
 import './QuickIntro.css';
 import linkedInIcon from '../../assets/LI-In-Bug.png';
 import githubIcon from '../../assets/github-mark.png';
-import trailheadIcon from '../../assets/github-mark.png';
+import trailheadIcon from '../../assets/trailhead.png';
 import xIcon from '../../assets/logo-black.png';
+import { calculateYearsOfExperience } from '../../util.js'; 
 
 export default function QuickIntro() {
+  const experience = calculateYearsOfExperience();
   const socials = [
     {
       name: "LinkedIn",
@@ -32,7 +34,7 @@ export default function QuickIntro() {
       <h2 className="quick-stats-title">Quick Intro</h2>
       <div className="stat-row">
         <span className="stat-label">Experience</span>
-        <span className="stat-value">11+ years</span>
+        <span className="stat-value">{experience} years</span>
       </div>
 
       <div className="stat-row">
