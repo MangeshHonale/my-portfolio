@@ -5,23 +5,33 @@ import './TabSet.css';
 import Slider from '../Slider/Slider.jsx';
 import SkillSet from '../SkillSet/SkillSet.jsx';
 import Credentials from '../Credentials/Credentials.jsx';
+import { useRef, useImperativeHandle  } from 'react';
 
-export default function TabSet() {
+export default function TabSet({ref}) {
     const tabs = [
-        { label: 'Work Experience', content: <WorkTimeline/> },
-        { label: 'Projects', content: <Slider/> },
-        { label: 'Skills', content: <SkillSet/> },
-        { label: 'Credentials', content: <Credentials/> },
+        { label: 'Work Experience', key:"experience", content: <WorkTimeline/> },
+        { label: 'Projects', key:"projects", content: <Slider/> },
+        { label: 'Skills', key:"skills", content: <SkillSet/> },
+        { label: 'Credentials', key:"credentials", content: <Credentials/> },
     ];
 
     const [activeIndex, setActiveIndex] = useState(0);
+    const tabSet = useRef();
+    useImperativeHandle(ref, () => {
+        return {
+            selectTab(tabId){
+                tabSet.current.scrollIntoView();
+                setActiveIndex(tabs.findIndex((tab) => tab.key === tabId));
+            }
+        }
+    });
 
     return (
-        <div className="tabset">
+        <div className="tabset" ref={tabSet}>
             <div className="tabset-header" role="tablist" aria-label="Sections">
                 {tabs.map((t, i) => (
                     <Tab
-                        key={t.label}
+                        key={t.key}
                         label={t.label}
                         isActive={i === activeIndex}
                         onClick={() => setActiveIndex(i)}

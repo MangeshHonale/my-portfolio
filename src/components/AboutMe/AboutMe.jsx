@@ -5,9 +5,10 @@ import resumeLink from '../../assets/Mangesh Honale_SF_Resume.pdf';
 import Modal from "../Modal/Modal.jsx";
 import FilePreview from "../FilePreview/FilePreview.jsx";
 import './AboutMe.css';
-import { useState } from "react";
+import { useState, useRef, useImperativeHandle } from "react";
 
-export default function AboutMe() {
+export default function AboutMe({ref}) {
+    const ele = useRef();
     const [isContactMeModalOpen, setIsContactMeModalOpen] = useState(false);
     const [isResumePreviewOpen, setIsResumePreviewOpen] = useState(false);
 
@@ -18,8 +19,16 @@ export default function AboutMe() {
     function handleResumePreviewClose(){
         setIsResumePreviewOpen(false);
     }
+
+    useImperativeHandle(ref, () => {
+        return{
+            focus(){
+                ele.current.scrollIntoView();
+            }
+        }
+    });
     return (
-        <span>
+        <span id="about-me" ref={ele}>
             <div className="hero-inner">
                 <div className="hero-main">
                     <div className="profile-pic box">
