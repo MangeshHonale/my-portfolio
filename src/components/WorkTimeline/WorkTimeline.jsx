@@ -6,8 +6,10 @@ export default function WorkTimeline() {
     return (
         <section className="timeline-section">
             <div className="timeline">
-                {WORK_EXPERIENCE.map((work) => (
-                    <WorkExperience {...work}/>
+                {WORK_EXPERIENCE.map((work, index) => (
+                    <span key={index}>
+                        <WorkExperience {...work}/>
+                    </span>
                 ))}
             </div>
         </section>
