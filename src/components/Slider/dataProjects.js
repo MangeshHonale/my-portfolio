@@ -3,7 +3,7 @@ export const PROJECTS = [
         title: "Financial Service Cloud Implementation",
         description: "Designed and delivered an end-to-end case management solution for multiple banking products using Salesforce Financial Services Cloud. The system supported omnichannel case intake via email, chat, phone, and web forms, enabling seamless customer interactions."+
                     "\nIntegrated Salesforce with external banking systems to surface relevant account and product information in real time for Tier-1 representatives, reducing the need for manual data lookup. Built automated routing and escalation logic using Omni-Channel and queue-based workflows, ensuring complex cases were assigned to Tier-2 teams with full customer 360 visibility and decision access."+
-                    "The solution improved case handling efficiency, reduced manual escalations, and provided a centralized and compliant workflow for managing regulated banking requests.",
+                    "\nThe solution improved case handling efficiency, reduced manual escalations, and provided a centralized and compliant workflow for managing regulated banking requests.",
         techStack: "Finacial Service Cloud, LWC, Apex, Triggers, REST API"
     },
     
@@ -25,8 +25,8 @@ export const PROJECTS = [
     {
         title: "Automated DocuSign-Enabled Opportunity Contract Workflow",
         description: "Implemented an automated contract generation and signing workflow by integrating the Opportunity sales process in Salesforce with DocuSign using a middleware layer. Previously, sales teams manually uploaded DOCX templates to DocuSign, populated customer and product details from Salesforce, managed multi-level approvals, and finally attached the signed contract back to the Opportunity before closing it making the process slow, error-prone, and difficult to track."+
-"To streamline the workflow, I built a guided contract creation wizard in Salesforce that allows sales reps to select contract templates, customers, and relevant opportunities. The middleware consumed the selected template and automatically generated a final PDF populated with customer and product data, then sent it to DocuSign via API for internal approvals and customer signatures."+
-"A webhook monitored contract status updates from DocuSign and synchronized them with Salesforce in real time. Once fully executed, the signed document was automatically attached to the Opportunity record and the deal stage updated to Closed Won. This automation reduced manual effort significantly and improved sales contract closure rates by 40%.", 
+"\nTo streamline the workflow, I built a guided contract creation wizard in Salesforce that allows sales reps to select contract templates, customers, and relevant opportunities. The middleware consumed the selected template and automatically generated a final PDF populated with customer and product data, then sent it to DocuSign via API for internal approvals and customer signatures."+
+"\nA webhook monitored contract status updates from DocuSign and synchronized them with Salesforce in real time. Once fully executed, the signed document was automatically attached to the Opportunity record and the deal stage updated to Closed Won. This automation reduced manual effort significantly and improved sales contract closure rates by 40%.", 
         techStack: "Sales cloud, Visualforce, Apex, Talend ESB, AWS EC2, DocuSign"
     }
 ];
