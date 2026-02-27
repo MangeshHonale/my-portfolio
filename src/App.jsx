@@ -171,7 +171,8 @@ export default function App() {
   const [activeSec, setActiveSec] = useState("about");
   const [statsOn,   setStatsOn]   = useState(false);
   const statsRef = useRef(null);
-  const experience = calculateYearsOfExperience();
+  const experienceRaw = calculateYearsOfExperience(); // "11+"
+  const experience = parseInt(experienceRaw, 10);
 
   useReveal();
 
@@ -258,9 +259,8 @@ export default function App() {
                 <span className="accent"><Typewriter text="Honale" delay={700} /></span>
               </h1>
               <p className="hero-bio reveal">
-                Salesforce certified Application Architect with extensive experience
-                architecting scalable CRM solutions for enterprise environments.
-                B.Tech CS from VIT Pune · Driven by precision &amp; continuous learning.
+                I am a Salesforce certified Application Architect and Developer with extensive experience architecting and delivering scalable CRM solutions for enterprise environments. Over the years I have worked across multiple domains of the Salesforce ecosystem to deliver high impact projects. My work is focused on solving complex business challenges through clean, maintainable engineering practices and high-performance system design.
+                            <br /><br />I hold a B.Tech in Computer Science from Vishwakarma Institute of Technology, Pune, where I built a strong foundation in software engineering and problem-solving. I am driven by precision, scalability, and the pursuit of continuous learning, and I am committed to delivering high-impact technology that enables organizations to operate efficiently and grow confidently.
               </p>
               <div className="hero-ctas reveal">
                 <a className="btn-primary" href={resumeLink} target="_blank" rel="noreferrer">
