@@ -113,12 +113,12 @@ body {
   color: var(--amber);
 }
 
-/* Desktop links */
-.nav-menu {
+/* Desktop nav */
+.nav-desktop {
   display: flex;
   gap: 2.2rem;
 }
-.nav-menu a {
+.nav-desktop a {
   font-size: .85rem;
   font-weight: 500;
   letter-spacing: .04em;
@@ -126,7 +126,7 @@ body {
   transition: color var(--t);
   position: relative;
 }
-.nav-menu a::after {
+.nav-desktop a::after {
   content: "";
   position: absolute;
   bottom: -5px; left: 0; right: 0;
@@ -137,10 +137,40 @@ body {
   transition: transform var(--t);
   border-radius: 99px;
 }
-.nav-menu a:hover,
-.nav-menu a.active { color: var(--text); }
-.nav-menu a.active::after,
-.nav-menu a:hover::after { transform: scaleX(1); }
+.nav-desktop a:hover,
+.nav-desktop a.active { color: var(--text); }
+.nav-desktop a.active::after,
+.nav-desktop a:hover::after { transform: scaleX(1); }
+
+/* Mobile full-screen overlay — lives outside <header> */
+.nav-mobile {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 950;
+  background: rgba(4, 4, 16, 0.97);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+}
+.nav-mobile.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.nav-mobile a {
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: var(--ff-display);
+  color: var(--text-sub);
+  letter-spacing: .04em;
+  transition: color var(--t);
+}
+.nav-mobile a:hover,
+.nav-mobile a.active { color: var(--cyan); }
 
 /* Burger */
 .burger {
@@ -836,24 +866,14 @@ body {
 @media (max-width: 900px) {
   .navbar { padding: 1rem 1.5rem; }
 
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    gap: 2rem;
-    position: fixed;
-    inset: 0;
-    background: rgba(4,4,16,.97);
-    align-items: center;
-    justify-content: center;
-    z-index: 905;
-    font-size: 1.2rem;
-  }
-  .nav-menu.open { display: flex; }
-  .nav-menu a::after { display: none; }
-  .nav-menu a.active,
-  .nav-menu a:hover { color: var(--cyan); }
+  /* Hide desktop nav, show burger */
+  .nav-desktop { display: none; }
+  .nav-mobile  { display: flex; }
+  .burger      { display: flex; }
 
-  .burger { display: flex; }
+  /* Burger stays on top of mobile overlay */
+  .navbar { z-index: 960; }
+  .burger { z-index: 970; }
 
   .hero-body {
     flex-direction: column;
