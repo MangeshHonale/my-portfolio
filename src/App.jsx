@@ -171,8 +171,8 @@ export default function App() {
   const [activeSec, setActiveSec] = useState("about");
   const [statsOn,   setStatsOn]   = useState(false);
   const statsRef = useRef(null);
-  const experienceRaw = calculateYearsOfExperience(); // "11+"
-  const experience = parseInt(experienceRaw, 10);
+  const experienceRaw = calculateYearsOfExperience(); // returns e.g. "11+"
+  const experience = parseInt(experienceRaw, 10);      // → 11 (number for Counter)
 
   useReveal();
 
@@ -209,7 +209,6 @@ export default function App() {
       <header className={`navbar${scrolled ? " scrolled" : ""}`}>
         <a href="#about" className="nav-brand">MH</a>
 
-        {/* burger */}
         <button
           className={`burger${navOpen ? " open" : ""}`}
           onClick={() => setNavOpen(p => !p)}
@@ -218,19 +217,33 @@ export default function App() {
           <span /><span /><span />
         </button>
 
-        <nav className={`nav-menu${navOpen ? " open" : ""}`}>
+        {/* Desktop nav stays inside header */}
+        <nav className="nav-menu nav-desktop">
           {navItems.map(n => (
             <a
               key={n.id}
               href={`#${n.id}`}
               className={activeSec === n.id ? "active" : ""}
-              onClick={() => setNavOpen(false)}
             >
               {n.label}
             </a>
           ))}
         </nav>
       </header>
+
+      {/* Mobile overlay — outside header to escape its stacking context */}
+      <nav className={`nav-mobile${navOpen ? " open" : ""}`}>
+        {navItems.map(n => (
+          <a
+            key={n.id}
+            href={`#${n.id}`}
+            className={activeSec === n.id ? "active" : ""}
+            onClick={() => setNavOpen(false)}
+          >
+            {n.label}
+          </a>
+        ))}
+      </nav>
 
       <main>
         {/* ─── HERO ──────────────────────────────────────────── */}
@@ -259,8 +272,9 @@ export default function App() {
                 <span className="accent"><Typewriter text="Honale" delay={700} /></span>
               </h1>
               <p className="hero-bio reveal">
-                I am a Salesforce certified Application Architect and Developer with extensive experience architecting and delivering scalable CRM solutions for enterprise environments. Over the years I have worked across multiple domains of the Salesforce ecosystem to deliver high impact projects. My work is focused on solving complex business challenges through clean, maintainable engineering practices and high-performance system design.
-                            <br /><br />I hold a B.Tech in Computer Science from Vishwakarma Institute of Technology, Pune, where I built a strong foundation in software engineering and problem-solving. I am driven by precision, scalability, and the pursuit of continuous learning, and I am committed to delivering high-impact technology that enables organizations to operate efficiently and grow confidently.
+                Salesforce certified Application Architect with extensive experience
+                architecting scalable CRM solutions for enterprise environments.
+                B.Tech CS from VIT Pune · Driven by precision &amp; continuous learning.
               </p>
               <div className="hero-ctas reveal">
                 <a className="btn-primary" href={resumeLink} target="_blank" rel="noreferrer">
@@ -457,7 +471,6 @@ export default function App() {
 
       <footer className="footer">
         <span>© {new Date().getFullYear()} Mangesh Honale</span>
-        <span>Built with React · Deployed on GitHub Pages</span>
       </footer>
     </div>
   );
