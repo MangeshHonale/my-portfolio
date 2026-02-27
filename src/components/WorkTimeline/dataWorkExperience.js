@@ -3,7 +3,7 @@ export const WORK_EXPERIENCE = [
         "title": "Solution Architect",
         "company": "Western Union",
         "location": "Pune, India",
-        "duration": "Mar 2023 - Present",
+        "duration": "Apr 2023 - Present",
         "responsibilities": [
             "Architect customized scalable solutions to transform customer support functions",
             "Involved in requirements gathering, analysis, technical solution, design, development and testing",
@@ -20,7 +20,7 @@ export const WORK_EXPERIENCE = [
         "title": "Application Developer",
         "company": "IBM",
         "location": "Pune, India",
-        "duration": "Jan 2020 - Mar 2023",
+        "duration": "Jan 2020 - Apr 2023",
         "responsibilities": [
             "Worked on-site in the U.S. for one year supporting business-critical modules",
             "Responsible for analysis, solution design, development, testing and user training",
