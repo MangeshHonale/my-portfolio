@@ -1,18 +1,18 @@
 export const SKILLSET = [
     {
-        "name": "Salesforce Core Competencies",
+        "name": "Salesforce Competencies",
         "skills": ["Apex", "Triggers", "Lightning Web Components (LWC)", "Aura Components",
-            "Visualforce", "Flows", "SOQL & SOSL", "Sales Cloud", "Service Cloud", "Experience Cloud"]
+      "Visualforce", "Flows", "SOQL", "SOSL", "Salesforce APIs", "Sales Cloud, "Service Cloud", "Experience Cloud"
+]
     },
 
     {
         "name": "Web Technologies",
-        "skills": ["JavaScript", "Java", "React", "AJAX", "XML", "HTML", "CSS", "jQuery"]
+        "skills": ["JavaScript", "Java", "HTML", "CSS", "jQuery", "SOAP/REST API", "OAuth 2.0", "SSO", "AWS EC2 & S3"]
     },
 
     {
         "name": "Tools & Applications",
-        "skills": ["Gitlab", "ANT", "Changeset", "Workbench", "Copado", "VS Code", "Jira",
-            "Postman", "SOAP UI", "Talend (ETL)", "AWS EC2 & S3", "DocuSign", "Mandrill", "Zuora", "Mambu", "Marqeta"]
+        "skills": ["Git", "ANT", "Changeset", "Workbench", "Copado", "VS Code", "Jira", "Postman", "Data Loader"]
     }
 ];
