@@ -2,7 +2,7 @@ export const SKILLSET = [
     {
         "name": "Salesforce Competencies",
         "skills": ["Apex", "Triggers", "Lightning Web Components (LWC)", "Aura Components",
-      "Visualforce", "Flows", "SOQL", "SOSL", "Salesforce APIs", "Sales Cloud, "Service Cloud", "Experience Cloud"
+      "Visualforce", "Flows", "SOQL", "SOSL", "Salesforce APIs", "Sales Cloud", "Service Cloud", "Experience Cloud"
 ]
     },
 
